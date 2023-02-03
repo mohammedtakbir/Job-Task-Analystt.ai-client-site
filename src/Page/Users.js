@@ -27,13 +27,13 @@ const Users = () => {
 
     const lastUserIndex = currentPage * userPerPage;
     const firstUserIndex = lastUserIndex - userPerPage;
-    const currentUsers = users.slice(firstUserIndex, lastUserIndex)
+    const currentUsers = users.slice(firstUserIndex, lastUserIndex);
     const pages = Math.ceil(users.length / 3);
 
     return (
         <>
-            <div className='max-w-[1000px] mx-auto mt-[100px] mb-[40px] shadow-lg border'>
-                <div className="relative overflow-x-auto">
+            <div className='md:max-w-[1000px] max-w-[800px] mx-auto mt-[100px] mb-[40px] shadow-lg border'>
+                <div className="relative overflow-x-auto border-collapse">
                     <table className="w-full text-sm text-left">
                         <div className="text-xs text-gray-700 uppercase bg-gray-50">
                             <div className='flex'>

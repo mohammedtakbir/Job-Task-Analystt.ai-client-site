@@ -6,8 +6,8 @@ const User = ({ user }) => {
     const [showDetails, setShowDetail] = useState(false);
     const { company, name, address, id, phone, email } = user
 
-    const handleShowDetails = (id, t) => {
-        setShowDetail(t)
+    const handleShowDetails = (id, details) => {
+        setShowDetail(details)
         fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
             .then(res => res.json())
             .then(data => {
