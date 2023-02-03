@@ -1,8 +1,9 @@
+import Users from "./Page/Users";
 
 function App() {
   return (
     <>
-      
+      <Users />
     </>
   );
 }
