@@ -24,31 +24,31 @@ const Users = () => {
     }
 
     return (
-        <section className='max-w-[800px] mx-auto my-[100px] shadow-lg border'>
+        <section className='max-w-[1000px] mx-auto my-[100px] shadow-lg border'>
             <div className="relative overflow-x-auto">
-                <table className="w-full text-sm text-left text-gray-500">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-                        <tr>
-                            <th scope="col" className="px-6 py-3">
+                <table className="w-full text-sm text-left">
+                    <div className="text-xs text-gray-700 uppercase bg-gray-50">
+                        <div className='flex'>
+                            <h2 className="px-6 py-3 w-[20%]">
                                 Company Name
-                            </th>
-                            <th scope="col" className="px-6 py-3">
+                            </h2>
+                            <h2 className="px-6 py-3 w-[20%]">
                                 Contact
-                            </th>
-                            <th scope="col" className="px-6 py-3">
+                            </h2>
+                            <h2 className="px-6 py-3 w-[20%]">
                                 City
-                            </th>
-                            <th scope="col" className="px-6 py-3">
+                            </h2>
+                            <h2 className="px-6 py-3 w-[20%]">
                                 Street
-                            </th>
-                            <th scope="col" className="px-6 py-3">
+                            </h2>
+                            <h2 className="px-6 py-3 w-[20%]">
                                 Action
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                            </h2>
+                        </div>
+                    </div>
+                    <div>
                         {users.map(user => <User key={user.id} user={user} />)}
-                    </tbody>
+                    </div>
                 </table>
             </div>
         </section>
