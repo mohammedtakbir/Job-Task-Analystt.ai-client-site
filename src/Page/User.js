@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 const User = ({ user }) => {
     const [details, setDetails] = useState(null);
-    const [test, setTest] = useState(false);
+    const [showDetails, setShowDetail] = useState(false);
     const { company, name, address, id, phone, email } = user
 
     const handleShowDetails = (id, t) => {
-        setTest(t)
+        setShowDetail(t)
         fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
             .then(res => res.json())
             .then(data => {
@@ -32,16 +32,16 @@ const User = ({ user }) => {
                 </p>
                 <p className="px-6 py-4 w-[20%]">
                     <button
-                        onClick={() => handleShowDetails(id, !test)}
+                        onClick={() => handleShowDetails(id, !showDetails)}
                         type="button"
                         class="text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2"
                     >
-                        {details?.id === id && test ? 'Hide Details' : 'Show Details'}
+                        {details?.id === id && showDetails ? 'Hide Details' : 'Show Details'}
                     </button>
                 </p>
             </div>
-            <div className={`border-b ${test && 'border-t-0'}`}>
-                {(details && test) &&
+            <div className={`border-b ${showDetails && 'border-t-0'}`}>
+                {(details && showDetails) &&
                     <div className='mt-0 mb-5 mx-10 border p-7 shadow-lg rounded-lg'>
                         <div>
                             <h3 className='text-xl font-semibold mb-2'>Description</h3>
@@ -84,7 +84,6 @@ const User = ({ user }) => {
                     </div>
                 }
             </div>
-
         </>
     );
 };
